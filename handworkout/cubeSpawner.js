@@ -53,29 +53,6 @@ AFRAME.registerComponent("cubespawner", {
         this.isTop = true;
       }
     }
-
-    // if(this.isLeft) {
-    //     positionX = 3;
-    //     if(this.isTop) {
-    //       positionY = 3;
-    //       this.isTop = false;
-    //     } else {
-    //       positionY = -2;
-    //       this.isTop = true;
-    //       this.isLeft = false;
-    //     }
-    // } else {
-    //     positionX = -3;
-
-    //     if(this.isTop) {
-    //       positionY = 3;
-    //       this.isTop = false;
-    //     } else {
-    //       positionY = -2;
-    //       this.isTop = true;
-    //       this.isLeft = true;
-    //     }
-    // }
     
 
     var cubeColor = getRedOrBlue();
