@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello Sabers!</title>
+    <meta charset="utf-8">
+    <meta name="description" content="SimpleSaber! • A-Frame" />
+    
+    <!-- the aframe standard library -->
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    
+    <!-- adding physics -->
+    <script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
+    
+    <!-- import custom javascript files -->
+    <script type="text/javascript" src="/handworkout/cubeSpawner.js"></script>
+    <script type="text/javascript" src="/handworkout/cubeDestroyer.js"></script>
+    <script type="text/javascript" src="/handworkout/cubeMovement.js"></script>
+    <script type="text/javascript" src="/handworkout/saber.js"></script>
+    <script type="text/javascript" src="/handworkout/scoreCounter.js"></script>    
+    
+  </head>
+  <body>
+    <a-scene renderer="antialias: true"
+             pool__cubes="mixin: cube; size: 10" 
+             cubespawner
+             scorecounter>
+      <a-assets>
+        <img id="sechelt" crossorigin="anonymous" src="/assets/images/background.png">
+        <a-mixin id="cube"
+                 class="cubes"
+                 geometry="primitive: box"
+                 position="0 1 -25"
+                 scale="0.4 0.4 0.4"
+                 rotation="0 45 0"
+                 cubemovement
+                 cubedestroyer
+        ></a-mixin>
+      </a-assets>
+
+      <a-camera></a-camera>
+      
+      <a-sky id="image-360" rotation="0 180 0" radius="30" src="#sechelt"></a-sky>
+      
+      <a-entity id="score" text="value: Score: 0" position="0 2.2 -1"></a-entity>
+      
+      <a-entity hand-controls="left">
+        <a-entity position="0 0.5 -0.5"
+                  rotation="-45 0 0">
+          <a-box id="redSaber" 
+                 color="red" 
+                 width="0.05" 
+                 height="1" 
+                 depth="0.05"
+                 saber="red"
+                 aabb-collider="objects: .cubes"
+                 position="0 -0.2 0"
+          ></a-box>
+        </a-entity>
+      </a-entity>
+      <a-entity hand-controls="right">
+        <a-entity position="0 0.5 -0.5"
+                    rotation="-45 0 0">
+            <a-box id="blueSaber" 
+                   color="blue" 
+                   width="0.05" 
+                   height="1" 
+                   depth="0.05"
+                   saber="blue"
+                   aabb-collider="objects: .cubes"
+                   position="0 -0.2 0"
+            ></a-box>
+          </a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
