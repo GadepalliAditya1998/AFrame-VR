@@ -28,27 +28,27 @@ AFRAME.registerComponent("cubespawner", {
     }
 
     // var positionX = getRandomNumber(-3, 3);
-    let positionX = 3
-    var positionY = 3;
+    let positionX = 2
+    var positionY = 2;
     var positionZ = -25;
 
     if(this.isTop) {
-      positionY = 3;
+      positionY = 2;
       if(this.isLeft) {
-        positionX = -3;
+        positionX = -2;
         this.isLeft = false;
       } else {
-        positionX = 3;
+        positionX = 2;
         this.isLeft = true;
         this.isTop = false;
       }
     } else {
       positionY = -2;
       if(this.isLeft) {
-        positionX = -3;
+        positionX = -2;
         this.isLeft = false;
       } else {
-        positionX = 3;
+        positionX = 2;
         this.isLeft = true;
         this.isTop = true;
       }
