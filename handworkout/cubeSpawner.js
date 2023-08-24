@@ -43,7 +43,7 @@ AFRAME.registerComponent("cubespawner", {
         this.isTop = false;
       }
     } else {
-      positionY = 0;
+      positionY = 1;
       if(this.isLeft) {
         positionX = -2;
         this.isLeft = false;
