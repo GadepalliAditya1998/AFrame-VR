@@ -30,7 +30,7 @@ AFRAME.registerComponent("cubespawner", {
     // var positionX = getRandomNumber(-3, 3);
     let positionX = 2
     var positionY = 2;
-    var positionZ = -25;
+    var positionZ = -20;
 
     if(this.isTop) {
       positionY = 2;
@@ -43,7 +43,7 @@ AFRAME.registerComponent("cubespawner", {
         this.isTop = false;
       }
     } else {
-      positionY = -2;
+      positionY = 0;
       if(this.isLeft) {
         positionX = -2;
         this.isLeft = false;
